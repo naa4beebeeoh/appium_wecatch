@@ -50,6 +50,7 @@ def send_to_telegram_hk(message):
 
 def send_to_telegram_tw(message):
     send_to_telegram(
+        message,
         os.environ.get("TG_BOT_API_TOKEN"),
         "-1001804211083",
     )
@@ -73,13 +74,6 @@ def check_if_send_to_telegram(el_name, el_address, msgs, func):
         msgs.append(this_tuple)
 
 
-def convert_to_url(match_obj):
-    if match_obj.group(1) is not None:
-        return f'<a href="https://www.google.com/">{match_obj.group(1)}</a>'
-    if match_obj.group(2) is not None:
-        return f"{match_obj.group(2).lower()}"
-
-
 def run():
     full_msgs = []
     hk_msgs = []
@@ -94,6 +88,8 @@ def run():
         el.click()
 
         send_to_telegram_full("=== 開機 ===")
+        send_to_telegram_hk("=== 開機 ===")
+        send_to_telegram_tw("=== 開機 ===")
 
         for y in range(1, 500):
             el = driver.find_element(
@@ -146,6 +142,8 @@ def run():
     finally:
         driver.quit()
         send_to_telegram_full("=== 關機 ===")
+        send_to_telegram_hk("=== 關機 ===")
+        send_to_telegram_tw("=== 關機 ===")
 
 
 run()
