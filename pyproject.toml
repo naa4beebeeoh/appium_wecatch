@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "appium-wecatch"
+version = "0.1.0"
+description = ""
+authors = ["naa4beebeeoh <26325741+naa4beebeeoh@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "appium_wecatch"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+appium-python-client = "^2.9.0"
+requests = "^2.28.2"
+
+
+[tool.poetry.dev-dependencies]
+black = "^23.1.0"
+flake8 = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
