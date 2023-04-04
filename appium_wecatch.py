@@ -35,7 +35,7 @@ def send_to_telegram(message, api_token, chat_id):
 def send_to_telegram_full(message):
     send_to_telegram(
         message,
-        os.environ.get('TG_BOT_API_TOKEN')
+        os.environ.get("TG_BOT_API_TOKEN"),
         "-1001920884298",
     )
 
@@ -43,14 +43,14 @@ def send_to_telegram_full(message):
 def send_to_telegram_hk(message):
     send_to_telegram(
         message,
-        os.environ.get('TG_BOT_API_TOKEN')
+        os.environ.get("TG_BOT_API_TOKEN"),
         "-1001931323142",
     )
 
 
 def send_to_telegram_tw(message):
     send_to_telegram(
-        os.environ.get('TG_BOT_API_TOKEN')
+        os.environ.get("TG_BOT_API_TOKEN"),
         "-1001804211083",
     )
 
